@@ -3,8 +3,8 @@ applications:
 - name: github-analytics
   services:
     - github-rabbitmq
-    - mysql-github-analytics
-    - github-eureka
+    - github-analytics-mysql
+    - service-registry
   env:
-    SPRING_PROFILES_ACTIVE: cloud
-    DEBUG: "true"
+    JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
+    TRUST_CERTS: api.run.pivotal.io
